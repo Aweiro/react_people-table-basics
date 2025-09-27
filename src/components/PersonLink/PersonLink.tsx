@@ -46,7 +46,14 @@ export const PersonLink = ({ person }: { person: Person }) => {
 
       <td>
         {person.father ? (
-          <Link to={`/people/${person.father.slug}`}>{person.fatherName}</Link>
+          <Link
+            to={`/people/${person.father.slug}`}
+            className={classNames({
+              'has-text-danger': person.father.sex === 'f',
+            })}
+          >
+            {person.fatherName}
+          </Link>
         ) : person.fatherName ? (
           person.fatherName
         ) : (

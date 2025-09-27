@@ -22,7 +22,7 @@ export const PeopleTable = ({ peoples }: { peoples: Person[] }) => {
         {peoples.map(person => {
           const personWithParent = {
             ...person,
-            mother: peoples.find(a => person.motherName === a.name),
+            mother: peoples.find(a => a.name === person.motherName),
             father: peoples.find(a => a.name === person.fatherName),
           };
 
