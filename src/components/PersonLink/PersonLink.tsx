@@ -8,7 +8,6 @@ export const PersonLink = ({ person }: { person: Person }) => {
   return (
     <tr
       data-cy="person"
-      key={person.slug}
       className={classNames({
         'has-background-warning': person.slug === personSlug,
       })}
@@ -31,7 +30,9 @@ export const PersonLink = ({ person }: { person: Person }) => {
       <td>
         {person.mother ? (
           <Link
-            className="has-text-danger"
+            className={classNames({
+              'has-text-danger': person.mother.sex === 'f',
+            })}
             to={`/people/${person.mother.slug}`}
           >
             {person.motherName}

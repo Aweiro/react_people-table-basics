@@ -20,13 +20,13 @@ export const PeopleTable = ({ peoples }: { peoples: Person[] }) => {
 
       <tbody>
         {peoples.map(person => {
-          const personWithParrent = {
+          const personWithParent = {
             ...person,
             mother: peoples.find(a => person.motherName === a.name),
             father: peoples.find(a => a.name === person.fatherName),
           };
 
-          return <PersonLink key={person.slug} person={personWithParrent} />;
+          return <PersonLink key={person.slug} person={personWithParent} />;
         })}
       </tbody>
     </table>
